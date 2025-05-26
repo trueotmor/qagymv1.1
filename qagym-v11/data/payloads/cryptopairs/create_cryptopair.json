@@ -1,0 +1,8 @@
+{
+"user_id":0,
+"crypto_currency":"TON",
+"base_currency":"USD",
+"price":"1.67890000",
+"threshold_value":"10000.0000000000",
+"notify_on":"above"
+}
