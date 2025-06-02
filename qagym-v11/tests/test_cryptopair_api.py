@@ -35,13 +35,7 @@ class TestCryptoPairAPI:
         assert response.status_code == HTTPStatus.CREATED
         assert response_data["user_id"] == payload["user_id"]
     
-    def test_get_cryptopairs_0(self, api_client, all_users):
-        logging.basicConfig(level=logging.DEBUG)
-        url = UserEndpoints.get_crypto_pairs(get_user_id_queries('random_user', all_users))
-        response = api_client.get(url)
-        assert response.status_code == HTTPStatus.OK
-
-    def test_get_cryptopairs_1(self, api_client, all_users):
+    def test_get_cryptopairs(self, api_client, all_users):
         logging.basicConfig(level=logging.DEBUG)
         url = UserEndpoints.get_crypto_pairs(get_user_id_queries('random_user', all_users))
         response = api_client.get(url)
