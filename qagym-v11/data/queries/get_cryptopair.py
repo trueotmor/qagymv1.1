@@ -11,3 +11,6 @@ def get_user_id_queries(query_name = '', user_ids = None):
         case "wrong_user_id":
             random_id = generate_number_excluding(1000000, 9999999999, user_ids)
             return random_id
+        case "big_number_user_id":
+            random_id = generate_number_excluding(9223372036854775808, 9999999999999999999999, user_ids)
+            return random_id

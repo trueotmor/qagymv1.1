@@ -62,3 +62,10 @@ class TestCryptoPairAPI:
         response = getattr(api_client, random_method)(url)
         assert response.status_code == HTTPStatus.METHOD_NOT_ALLOWED
         assert response.json()["detail"] == error_messages.cryptopair['wrong_method'].format(random_method.upper())
+
+    def test_get_cryptopair_big_number(self, api_client, error_messages, all_users):
+        logging.basicConfig(level=logging.DEBUG)
+        url = UserEndpoints.get_crypto_pairs(get_user_id_queries('big_number_user_id', all_users))
+        response = api_client.get(url)
+        assert response.status_code == HTTPStatus.BAD_REQUEST
+        assert response.json()["error"] == error_messages.cryptopair['big_number_user_id']

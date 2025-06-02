@@ -116,6 +116,7 @@ def error_messages():
         cryptopair = {
             'missing_user_id': 'user not provided',
             'wrong_user_id' : 'No User matches the given query.',
-            'wrong_method' : 'Method "{}" not allowed.'
+            'wrong_method' : 'Method "{}" not allowed.',
+            'big_number_user_id' : 'No User matches the given query.'
         }
     return Messages
